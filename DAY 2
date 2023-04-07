@@ -1,0 +1,13 @@
+import gym
+import retro    
+
+#Environment creation
+env = retro.make(game='SpaceInvaders-Atari2600');
+# don't work for me ...
+
+# when i try this : 
+
+for game in retro.data.list_games():
+   print(game)
+
+# I see the game SpaceInvaders-Atari2600
