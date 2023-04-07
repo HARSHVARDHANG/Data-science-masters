@@ -1,0 +1,25 @@
+import random
+player = input("\nnama player:")
+print("Welcome to the GuesOrd game", player.title() + ".")
+print("\nKategori: Hewan")
+words = ["duck", "chicken", "bird", "platypus"]
+word = random.choice(words)
+guesses = "
+chance = 10
+while True:
+    for i in word:
+        if i in guesses:
+            print(i, end=" ")
+        else:
+            print("_", end=" ")
+    guess = input("\nyour guess(only input 1 aplhabet):")[0]
+    if guess in word:
+        guesses += guess
+    elif guess not in word:
+        chance -= 1
+        print("wrong guess. Guess again!")
+        print("you have " + str(chance) + " chance left!")
+        if chance == 0:
+            print("\nGame Over!")
+            print("The Answer Is", word)
+            break
